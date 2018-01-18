@@ -13,7 +13,6 @@ sendTweet(event){
 
   render () {
     return (
-
     	<div className="row">
 	    	<form onSubmit={this.sendTweet.bind(this)}>
 	    		<div className="input-field">
