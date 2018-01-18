@@ -21,32 +21,7 @@ class Main extends React.Component {
 		this._onChange= this._onChange.bind(this);
 	}
 
-	/*formattedTweets(newTweetsList){
-
-		let formattedList= newTweetsList.map(tweet=>{
-			tweet.formattedDate = moment(tweet.created_at).fromNow();
-			return tweet;
-		});
-		return{
-			tweetsList:formattedList
-		}
-	}*/
-
-	addTweet(tweetToAdd) {
-		//mockTweets.unshift({...})
-		/*$.post("/tweets", {body: tweetToAdd})
-		.success(savedTweet => {
-			let newTweetsList = this.state.tweetsList;
-			newTweetsList.unshift(savedTweet);
-			this.setState(this.formattedTweets(newTweetsList));
-		})
-		.error(error => console.log(error));*/
-	}
-
 	componentDidMount(){
-		//$.ajax("/tweets")
-		//.success(data=> this.setState(this.formattedTweets(data)))
-		//.error(error=>console.log(error));
 		TweetStore.addChangeListener(this._onChange);
 	}
 

@@ -36,7 +36,6 @@ AppDispatcher.register(action => {
 			break;
 		//acknowledge tweets
 		//emit a change event
-		
 		case ActionTypes.RECEIVED_ONE_TWEET:
 			console.log(4,"AppDispatcher.RECEIVED_ONE_TWEET");
 			_tweets.unshift(action.rawTweet);
