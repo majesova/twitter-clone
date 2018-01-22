@@ -2,7 +2,8 @@ class TweetsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		render json:Tweet.includes(:user).all.order(created_at: :desc)
+		
+		render json: Tweet.stream_for(current_user.id);
 	end
 
 	def create

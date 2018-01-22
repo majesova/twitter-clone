@@ -2,30 +2,17 @@
 //TweetStore
 import AppDispatcher from "../dispatcher"
 import ActionTypes from "../constants"
-import {EventEmitter} from "events";
+import AppEventEmitter from "./AppEventEmitter"
+
 
 let _tweets = [];
-const CHANGE_EVENT = "CHANGE";
 
-class TweetEventEmitter extends EventEmitter{
+class TweetEventEmitter extends AppEventEmitter{
 	getAll(){
 		return _tweets.map(tweet=>{
 			tweet.formattedDate = moment(tweet.created_at).fromNow();
 			return tweet;
 		});
-	}
-	emitChange(){
-		console.log("TweetEventEmitter.emitChange");
-		this.emit(CHANGE_EVENT);
-	}
-	addChangeListener(callback){
-		console.log("addChangeListener");
-		console.log(callback);
-		this.on(CHANGE_EVENT, callback);
-	}
-	removeChangeListener(callback){
-		console.log(callback);
-		this.removeListener(CHANGE_EVENT, callback);
 	}
 }
 
@@ -45,7 +32,7 @@ AppDispatcher.register(action => {
 		case ActionTypes.RECEIVED_ONE_TWEET:
 			console.log(4,"AppDispatcher.RECEIVED_ONE_TWEET");
 			_tweets.unshift(action.rawTweet);
-			alert("agregado al arreglo");
+			console.log("agregado al arreglo"); 
 			TweetStore.emitChange();
 			break;
 
