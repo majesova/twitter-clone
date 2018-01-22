@@ -7,12 +7,16 @@ class TweetBox extends React.Component {
 
 sendTweet(event){
 	event.preventDefault();
-	TweetActions.sendTweet(this.refs.tweetTextArea.value);
-	this.refs.tweetTextArea.value='';
+	//this.props.sendTweet(this.refs.tweetTextArea.value);
+	if(this.refs.tweetTextArea.value.length>0){
+		TweetActions.sendTweet(this.refs.tweetTextArea.value);
+		this.refs.tweetTextArea.value='';
+	}
 }
 
   render () {
     return (
+
     	<div className="row">
 	    	<form onSubmit={this.sendTweet.bind(this)}>
 	    		<div className="input-field">

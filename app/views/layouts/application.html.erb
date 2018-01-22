@@ -21,12 +21,15 @@
   </head>
 
   <body>
+<nav>
+    <div class="nav-wrapper">
 
-  <div>
-    <div class="right">
+      <a href="/" class="brand-logo"> <i class="large material-icons">home</i></a>
+      <div class="right">
       <% if user_signed_in? %>
           Welcome 
-          <%= link_to current_user.display_name, "/profile" %>,
+          <%= link_to current_user.display_name, "/profile" %>
+          ,
           <%= link_to "logout", destroy_user_session_path, method:'DELETE' %> 
         <% else %>
           Please 
@@ -34,12 +37,19 @@
           or
           <%= link_to "signup", new_user_registration_path %> 
         <% end %>
+        &nbsp;
     </div>
+    </div>
+  </nav>
+  <div>
+    
   </div>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    
+
   </body>
 </html>
