@@ -63,7 +63,7 @@ class Follow extends React.Component {
     				<ul className="collection">
     					{users}
     				</ul>
-    				<Link to="/">Back</Link>
+    				<Link className="option" to="/">Back</Link>
     			</div>
 		);
   }

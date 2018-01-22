@@ -37,12 +37,13 @@ class Index extends React.Component {
   render () {
 
     return (
-	      	<div className="container">
-				  
-			   	<NavLink to="/follow" activeClassName="active">Who to follow</NavLink>
-			    
-	      		<TweetBox/>
-	      		<TweetsList tweets={this.state.tweetsList}/>
+    		<div>
+	    		<NavLink to="/follow" className="right option" activeClassName="active ">Who to follow?</NavLink>
+	    	
+		      	<div className="container">
+		      		<TweetBox/>
+		      		<TweetsList tweets={this.state.tweetsList}/>
+		      	</div>
 	      	</div>
 	    );
 
