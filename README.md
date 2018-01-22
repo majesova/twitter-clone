@@ -1,24 +1,10 @@
 # README
+This code corresponds to files for solution of the course "React.js on Rails: Building a Full Stack Web App".
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The used tecnologies are:
 
-Things you may want to cover:
-
-* Ruby version 5
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ruby 2.3.3
+* Rails 5.1.4
+* npm 5.6.0
+* nvm 1.1.6
+* webpack 3.10.0
